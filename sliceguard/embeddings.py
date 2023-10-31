@@ -10,7 +10,8 @@ def get_embedding_imports():
         from sentence_transformers import SentenceTransformer
         from transformers import AutoFeatureExtractor, AutoModel
         import torch
-    except ImportError:
+    except ImportError as error:
+        logging.exception(str(error)) 
         raise Warning(
             'Optional dependency required! (pip install "sliceguard[embedding]")'
         )
