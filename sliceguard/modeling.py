@@ -13,7 +13,6 @@ from .models.huggingface import (
 def get_automl_imports():
     try:
         from flaml import AutoML
-        import xgboost
     except ImportError:
         raise RuntimeError(
             'Optional dependencies flaml and xgboost required! (run pip install "sliceguard[automl]")'
